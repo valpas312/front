@@ -5,15 +5,18 @@ import {
   FormLabel,
   Input,
   Spinner,
-  useToast
+  useToast,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { saveToken } from "../helpers/JWT";
+import { setUser } from "../redux/configStore";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
+  const dispatch = useDispatch();
+
   const toast = useToast();
 
   const navigate = useNavigate();
@@ -52,7 +55,7 @@ const Login = () => {
             duration: 9000,
             isClosable: true,
           });
-          saveToken(data.data.token);
+          dispatch(setUser(data.data.student));
           navigate("/Home");
         },
         onError: (error) => {

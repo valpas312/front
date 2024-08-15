@@ -1,16 +1,35 @@
-import { getToken } from "../helpers/JWT"
-import { jwtDecode } from "jwt-decode"
+import { Box, Button, Text } from "@chakra-ui/react";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../redux/configStore";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const token = getToken()
-  const user = jwtDecode(token)
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+  console.log(user);
+  const navigate = useNavigate();
 
-  console.log(user)
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/Login");
+  };
+
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
-  )
-}
+    <Box
+      w="100vw"
+      h="10vh"
+      border="1px"
+      display="flex"
+      justifyContent="space-around"
+      alignItems="center"
+      bg="#333"
+    >
+      <Text as="b" color="#fff">Home</Text>
+      <Button onClick={handleLogout} colorScheme="red" variant="solid">
+        Log Out
+      </Button>
+    </Box>
+  );
+};
 
-export default Home
+export default Home;
