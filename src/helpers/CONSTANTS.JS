@@ -1,0 +1,1 @@
+export const yoJPG = "https://media.licdn.com/dms/image/v2/D4D03AQGRlbvOm0KAkw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1721664369740?e=1729123200&v=beta&t=havUYrgzdW6BRqnnFIiJOVN0aMOGlmvONXI0Vinf6vk"

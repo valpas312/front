@@ -1,34 +1,34 @@
-import { Box, Button, Text } from "@chakra-ui/react";
-import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../redux/configStore";
-import { useNavigate } from "react-router-dom";
+import { Box, Text } from "@chakra-ui/react";
+import Header from "../components/Header";
 
 const Home = () => {
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
-  console.log(user);
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    dispatch(logout());
-    navigate("/Login");
-  };
-
   return (
-    <Box
-      w="100vw"
-      h="10vh"
-      border="1px"
-      display="flex"
-      justifyContent="space-around"
-      alignItems="center"
-      bg="#333"
-    >
-      <Text as="b" color="#fff">Home</Text>
-      <Button onClick={handleLogout} colorScheme="red" variant="solid">
-        Log Out
-      </Button>
-    </Box>
+    <>
+      <Header />
+      <Box
+        bgColor="#625B5B"
+        w="100vw"
+        h="83vh"
+        color="#fff"
+        display="flex"
+        justifyContent="center"
+        padding="20px"
+      >
+        <Text as="b" fontSize="2xl">
+          Bienvenido a la página de inicio
+        </Text>
+      </Box>
+      <Box
+        h="7vh"
+        bg="#333"
+        borderBottom="1px solid gray"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Text color="#fff">Valentin Palmas</Text>
+      </Box>
+    </>
   );
 };
 

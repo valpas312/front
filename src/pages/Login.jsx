@@ -87,6 +87,7 @@ const Login = () => {
         <Input
           id="dni"
           type="number"
+          isRequired
           placeholder="DNI"
           value={dni}
           onChange={handleDniChange}
@@ -95,6 +96,7 @@ const Login = () => {
         <FormLabel>Contraseña</FormLabel>
         <Input
           id="contraseña"
+          isRequired
           type="password"
           placeholder="******"
           value={contraseña}
