@@ -32,7 +32,7 @@ const DrawerProfile = ({isOpen, onClose, btnRef, user, handleLogout}) => {
         <DrawerBody display="flex" flexDirection="column" margin="2em 0">
           <Stack divider={<hr />} spacing={3} gap="2em">
             <Box>
-              <Heading size="sm" textTransform="uppercase">
+              <Heading size="sm" textTransform="uppercase" lineHeight="normal">
                 Nombre
               </Heading>
               <Text pt="2" fontSize="md">
@@ -40,7 +40,7 @@ const DrawerProfile = ({isOpen, onClose, btnRef, user, handleLogout}) => {
               </Text>
             </Box>
             <Box>
-              <Heading size="sm" textTransform="uppercase">
+              <Heading size="sm" textTransform="uppercase" lineHeight="normal">
                 DNI
               </Heading>
               <Text pt="2" fontSize="md">
@@ -48,7 +48,7 @@ const DrawerProfile = ({isOpen, onClose, btnRef, user, handleLogout}) => {
               </Text>
             </Box>
             <Box>
-              <Heading size="sm" textTransform="uppercase">
+              <Heading size="sm" textTransform="uppercase" lineHeight="normal">
                 Nombre
               </Heading>
               <Text pt="2" fontSize="md">

@@ -1,13 +1,20 @@
-import { Heading, Stat, StatLabel, StatNumber, StatHelpText, Stack } from "@chakra-ui/react"
+import {
+  Heading,
+  Stat,
+  StatLabel,
+  StatNumber,
+  StatHelpText,
+  Stack,
+} from "@chakra-ui/react";
 
 // eslint-disable-next-line react/prop-types
-const Dolar = ({...dolares}) => {
-    const dolaresArray = Object.values(dolares)
-  return (<Stack divider={<hr/>} spacing={7}>
-    {
-        dolaresArray.map((dolar)=>(
-            <>
-          <Heading as="h2" size="md" mb={4}>
+const Dolar = ({ ...dolares }) => {
+
+  return (
+    <Stack divider={<hr />} spacing={7} gap=".3em">
+      {dolares[0].map((dolar) => (
+        <div key={dolar.nombre}>
+          <Heading size="md" mb={4} lineHeight="normal">
             {dolar?.nombre || "Dólar"}
           </Heading>
           <Stat>
@@ -20,10 +27,10 @@ const Dolar = ({...dolares}) => {
             <StatNumber>${dolar?.venta || "N/A"}</StatNumber>
             <StatHelpText>Precio de venta del dólar</StatHelpText>
           </Stat>
-        </>
-        ))
-    }
-  </Stack>)
-}
+        </div>
+      ))}
+    </Stack>
+  );
+};
 
-export default Dolar
+export default Dolar;

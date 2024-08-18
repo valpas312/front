@@ -1,11 +1,9 @@
-import { yoJPG } from "../helpers/CONSTANTS.JS";
 import DrawerProfile from "../components/DrawerProfile";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../redux/configStore";
 import { useNavigate } from "react-router-dom";
 import { Box, Text, Avatar, useDisclosure, Divider } from "@chakra-ui/react";
-import { bgPrimary } from "../helpers/CONSTANTS.JS";
-import { colorPrimary } from "../helpers/CONSTANTS.JS";
+import { bgPrimary, colorPrimary, yoJPG } from "../helpers/CONSTANTS.js";
 import { useRef } from "react";
 
 const Header = () => {

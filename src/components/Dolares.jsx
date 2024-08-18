@@ -5,19 +5,18 @@ import {
   Heading,
   Spinner,
 } from "@chakra-ui/react";
-import { colorSecondary } from "../helpers/CONSTANTS.JS";
+import { colorSecondary, DOLAR_API } from "../helpers/CONSTANTS.js";
 import axios from "axios";
 import Dolar from "./DolaresComponents/Dolar";
-import { DOLAR_API } from "../helpers/CONSTANTS.JS";
 
 const Dolares = () => {
-  const [dolares, setDolares] = useState(null);
+  const [dolares, setDolares] = useState([]);
   const [loading, setLoading] = useState(true);
 
     useEffect(() => {
     axios.get(DOLAR_API)
         .then((res) => {
-            setDolares(res.data);
+            setDolares([res.data]);
             setLoading(false);
         })
         .catch((err) => {
@@ -28,11 +27,11 @@ const Dolares = () => {
   return (
     <Box
       bgColor="white"
-      borderWidth="3px"
       borderRadius="lg"
       p={4}
       width="300px"
       color={colorSecondary}
+      boxShadow="md"
     >
       {loading ? (
         <Flex justify="center">
@@ -40,7 +39,7 @@ const Dolares = () => {
         </Flex>
       ) : (
         <>  
-        <Heading mb={4} overflow="hidden">
+        <Heading mb={4} lineHeight="normal">
           Dólares
         </Heading>
         <Dolar {...dolares} />

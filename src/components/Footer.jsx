@@ -1,4 +1,4 @@
-import { bgPrimary } from "../helpers/CONSTANTS.JS";
+import { bgPrimary } from "../helpers/CONSTANTS.js";
 import { Box, Text } from "@chakra-ui/react";
 const Footer = () => {
   return (
