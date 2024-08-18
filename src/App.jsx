@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import store, { persistor } from "./redux/configStore";
+import Layout from "./pages/Layout";
 
 function App() {
   return (
@@ -12,9 +13,11 @@ function App() {
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/Home" element={<Home />} />
-            <Route path="/Register" element={<Register />} />
+            <Route path="/Login" element={<Login />} />
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="/Register" element={<Register />} />
+            </Route>
           </Routes>
         </BrowserRouter>
       </PersistGate>

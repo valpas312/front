@@ -1,54 +1,62 @@
-import { useRef } from "react";
 import { yoJPG } from "../helpers/CONSTANTS.JS";
 import DrawerProfile from "../components/DrawerProfile";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../redux/configStore";
 import { useNavigate } from "react-router-dom";
-import { Box, Text, Avatar, useDisclosure } from "@chakra-ui/react";
-
+import { Box, Text, Avatar, useDisclosure, Divider } from "@chakra-ui/react";
+import { bgPrimary } from "../helpers/CONSTANTS.JS";
+import { colorPrimary } from "../helpers/CONSTANTS.JS";
+import { useRef } from "react";
 
 const Header = () => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   console.log(user);
   const navigate = useNavigate();
-    const handleLogout = () => {
-        dispatch(logout());
-        navigate("/Login");
-      };
-    const { isOpen, onOpen, onClose } = useDisclosure();
-    const btnRef = useRef();
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/Login");
+  };
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = useRef();
   return (
     <Box
-        w="100vw"
-        h="10vh"
-        border="1px"
+      w="100vw"
+      h="3em"
+      display="flex"
+      justifyContent="space-around"
+      alignItems="center"
+      bg={bgPrimary}
+    >
+      <Text color={colorPrimary}>
+        Home
+      </Text>
+      <Box
         display="flex"
         justifyContent="space-around"
         alignItems="center"
-        bg="#333"
-        borderBottom="1px solid gray"
+        gap=".5em"
       >
-        <Text as="b" color="#fff">
-          Home
-        </Text>
+        <Text color={colorPrimary}>{user.nombre}</Text>
+        <Divider orientation="vertical" height="2em" />
         <Avatar
           cursor="pointer"
-          size="md"
+          size="sm"
           name={user.nombre}
           onClick={onOpen}
           ref={btnRef}
           src={yoJPG}
         />
-        <DrawerProfile
-          isOpen={isOpen}
-          onClose={onClose}
-          btnRef={btnRef}
-          user={user}
-          handleLogout={handleLogout}
-        />
       </Box>
-  )
-}
+      <DrawerProfile
+        isOpen={isOpen}
+        onClose={onClose}
+        btnRef={btnRef}
+        user={user}
+        handleLogout={handleLogout}
+      />
+    </Box>
+  );
+};
 
-export default Header
+export default Header;
