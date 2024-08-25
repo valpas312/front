@@ -31,10 +31,10 @@ const Login = () => {
     setContraseña(event.target.value);
   };
 
-  const { mutate, isLoading } = useMutation({
+  const { mutate, isPending} = useMutation({
     mutationKey: ["login"],
     mutationFn: () => {
-      return axios.post("http://localhost:8080/students/login", {
+      return axios.post("https://back-seven-indol.vercel.app/students/login", {
         dni: dni,
         contraseña: contraseña,
       });
@@ -104,7 +104,7 @@ const Login = () => {
         />
 
         <Button colorScheme="blue" size="lg" mt={4} type="submit">
-          {isLoading ? <Spinner /> : "Iniciar Sesión"}
+          {isPending ? <Spinner /> : "Iniciar Sesión"}
         </Button>
       </FormControl>
     </Container>
