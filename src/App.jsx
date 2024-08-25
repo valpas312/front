@@ -1,6 +1,6 @@
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-import Register from "./pages/Register";
+// import Register from "./pages/Register";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
@@ -15,8 +15,8 @@ function App() {
           <Routes>
             <Route path="/Login" element={<Login />} />
             <Route path="/" element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path="/Register" element={<Register />} />
+              <Route index path="/Home" element={<Home />} />
+              {/* <Route path="/Register" element={<Register />} /> */}
             </Route>
           </Routes>
         </BrowserRouter>

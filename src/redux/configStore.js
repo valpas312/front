@@ -11,12 +11,23 @@ const userSlice = createSlice({
     },
     logout : () => {
       return {};
-    }
+    },
   },
 });
 
+const techSlice = createSlice({
+  name: "techs",
+  initialState: [],
+  reducers: {
+    setTechs: (state, action) => {
+      return action.payload;
+    },
+  }
+})
+
 const rootReducer = combineReducers({
   user: userSlice.reducer,
+  techs: techSlice.reducer,
 });
 
 const persistConfig = {
@@ -39,3 +50,4 @@ export const persistor = persistStore(store);
 export default store;
 
 export const { setUser, logout } = userSlice.actions;
+export const { setTechs } = techSlice.actions;

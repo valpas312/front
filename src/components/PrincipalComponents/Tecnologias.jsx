@@ -1,40 +1,29 @@
 import { useState, useEffect } from "react";
-import {
-  Box,
-  Heading,
-  Spinner,
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Image,
-  Button,
-  useDisclosure,
-} from "@chakra-ui/react";
-import {
-  bgPrimary,
-  bgSecondary,
-  colorSecondary,
-} from "../../helpers/CONSTANTS";
+import { Box, Heading, Spinner } from "@chakra-ui/react";
+
 import tecnologias from "../../helpers/tecnologias";
+import { useDispatch } from "react-redux";
+import { setTechs } from "../../redux/configStore";
+import Tecnologia from "./Tecnologia";
 
 const Tecnologias = () => {
+  const dispatch = useDispatch();
+
   const [tecnologia, setTecnologia] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const { isOpen, onClose } = useDisclosure()
 
   useEffect(() => {
     tecnologias
       .then((res) => {
         setTecnologia(res);
+        dispatch(setTechs(res));
         setLoading(false);
         console.log(res);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [dispatch]);
 
   return (
     <Box
@@ -48,53 +37,18 @@ const Tecnologias = () => {
       <Heading color="black" lineHeight="normal" size="lg">
         Tecnologias Utilizadas
       </Heading>
-      <Box display="flex" flexWrap="wrap" justifyContent="center" gap="2em" padding="1em">
+      <Box
+        display="flex"
+        flexWrap="wrap"
+        justifyContent="center"
+        gap="2em"
+        padding="1em"
+      >
         {loading ? (
           <Spinner size="xl" padding="2em" lineHeight="normal" />
         ) : (
           tecnologia.map((tecnologia) => (
-            <Card
-              key={tecnologia.nombre}
-              bgColor={bgSecondary}
-              color={colorSecondary}
-              boxShadow="md"
-              borderRadius="2xl"
-              maxH="100%"
-              maxW="500px"
-              display="flex"
-              flexDirection="row"
-            >
-              <CardHeader
-                bgColor={bgPrimary}
-                boxShadow="md"
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                borderRadius="lg"
-              >
-                <Image
-                  src={tecnologia.imagen}
-                  alt={tecnologia.nombre}
-                  w="400px"
-                  objectFit="cover"
-                />
-              </CardHeader>
-              <Box>
-                <CardBody>
-                  <Heading size="md" lineHeight="normal">
-                    {tecnologia.nombre}
-                  </Heading>
-                  <Heading size="sm" lineHeight="normal">
-                    {tecnologia.descripcion}
-                  </Heading>
-                </CardBody>
-                <CardFooter>
-                  <Button onClick={isOpen} onClose={onClose} colorScheme="blue">
-                    Ver Mas
-                  </Button>
-                </CardFooter>
-              </Box>
-            </Card>
+            <Tecnologia key={tecnologia.nombre} {...tecnologia} />
           ))
         )}
       </Box>
