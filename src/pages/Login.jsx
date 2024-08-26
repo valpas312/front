@@ -56,7 +56,7 @@ const Login = () => {
             isClosable: true,
           });
           dispatch(setUser(data.data.student));
-          navigate("/Home");
+          navigate("/");
         },
         onError: (error) => {
           console.log(error);

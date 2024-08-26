@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import Header from "../components/Header";
-import { bgSecondary, colorPrimary } from "../helpers/CONSTANTS.js";
+import { bgSecondary, colorPrimary } from "../helpers/CONSTANTS";
 import Footer from "../components/Footer";
 import { Outlet } from "react-router-dom";
 
