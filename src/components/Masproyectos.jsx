@@ -1,5 +1,5 @@
 import { Box, Text } from '@chakra-ui/react'
-import { colorSecondary } from '../helpers/constants'
+import { colorSecondary } from '../helpers/constantes'
 
 const Masproyectos = () => {
   return (
