@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../redux/configStore";
 import { useNavigate } from "react-router-dom";
 import { Box, Text, Avatar, useDisclosure, Divider } from "@chakra-ui/react";
-import { bgPrimary, colorPrimary, yoJPG } from "../helpers/CONSTANTS.js";
+import { bgPrimary, colorPrimary } from "../helpers/constants";
 import { useRef } from "react";
 
 const Header = () => {

@@ -13,7 +13,7 @@ import {
   bgPrimary,
   bgSecondary,
   colorSecondary,
-} from "../../helpers/CONSTANTS";
+} from "../../helpers/constants";
 import TecnologiaModal from "./TecnologiaModal";
 
 // eslint-disable-next-line react/prop-types

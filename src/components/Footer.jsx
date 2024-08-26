@@ -1,5 +1,5 @@
-import { bgPrimary } from "../helpers/CONSTANTS.js";
 import { Box, Text } from "@chakra-ui/react";
+import { bgPrimary } from "../helpers/constants";
 const Footer = () => {
   return (
     <Box

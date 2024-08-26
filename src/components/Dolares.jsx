@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Box, Heading, Stack } from "@chakra-ui/react";
-import { colorSecondary, DOLAR_API } from "../helpers/CONSTANTS.js";
+import { DOLAR_API, colorSecondary } from "../helpers/constants";
 import axios from "axios";
 import Dolar from "./DolaresComponents/Dolar";
 import SleletonDolar from "./DolaresComponents/SkeletonDolar";
