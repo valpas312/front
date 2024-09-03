@@ -1,0 +1,10 @@
+{
+  "validUser": {
+    "dni": 45929690,
+    "contraseña": "41667229Vv."
+  },
+  "invalidUser": {
+    "dni": 45929690,
+    "contraseña": "41667229Vv"
+  }
+}

@@ -91,6 +91,7 @@ const Login = () => {
           placeholder="DNI"
           value={dni}
           onChange={handleDniChange}
+          name="dni"
         />
 
         <FormLabel>Contraseña</FormLabel>
@@ -101,6 +102,7 @@ const Login = () => {
           placeholder="******"
           value={contraseña}
           onChange={handlePasswordChange}
+          name="contraseña"
         />
 
         <Button colorScheme="blue" size="lg" mt={4} type="submit">
