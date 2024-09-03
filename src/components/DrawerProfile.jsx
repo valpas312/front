@@ -5,12 +5,11 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  Button,
-  Box,
-  Heading,
-  Text,
   Stack,
+  Button,
 } from "@chakra-ui/react";
+import DrawerHeadingBox from "./DrawerProfileComponents/DrawerHeadingBox";
+import { github, linkedin } from "../helpers/constantes";
 
 // eslint-disable-next-line react/prop-types
 const DrawerProfile = ({isOpen, onClose, btnRef, user, handleLogout}) => {
@@ -30,31 +29,12 @@ const DrawerProfile = ({isOpen, onClose, btnRef, user, handleLogout}) => {
       <DrawerContent>
         <DrawerCloseButton />
         <DrawerBody display="flex" flexDirection="column" margin="2em 0">
-          <Stack divider={<hr />} spacing={3} gap="2em">
-            <Box>
-              <Heading size="sm" textTransform="uppercase" lineHeight="normal">
-                Nombre
-              </Heading>
-              <Text pt="2" fontSize="md">
-                {nombre}
-              </Text>
-            </Box>
-            <Box>
-              <Heading size="sm" textTransform="uppercase" lineHeight="normal">
-                DNI
-              </Heading>
-              <Text pt="2" fontSize="md">
-                {dni}
-              </Text>
-            </Box>
-            <Box>
-              <Heading size="sm" textTransform="uppercase" lineHeight="normal">
-                Nombre
-              </Heading>
-              <Text pt="2" fontSize="md">
-                {email}
-              </Text>
-            </Box>
+          <Stack divider={<hr />} spacing={5} gap="2em">
+            <DrawerHeadingBox heading="Nombre" text={nombre} />
+            <DrawerHeadingBox heading="DNI" text={dni} />
+            <DrawerHeadingBox heading="Email" text={email} />
+            <DrawerHeadingBox heading="Github" text={github} />
+            <DrawerHeadingBox heading="Linkedin" text={linkedin} />
           </Stack>
         </DrawerBody>
 
