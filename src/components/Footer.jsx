@@ -1,6 +1,6 @@
-import { Box, Text, Divider, Link } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { bgPrimary, colorPrimary } from "../helpers/constantes";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
+// import { ExternalLinkIcon } from "@chakra-ui/icons";
 const Footer = () => {
   return (
     <Box
@@ -13,8 +13,7 @@ const Footer = () => {
         gap="1em"
       >
         <Text color={colorPrimary} fontSize="sm">Valentin Palmas</Text>
-        <Divider orientation="vertical" height="70%" />
-        <Link color={colorPrimary} fontSize="sm">Sugerencias{<ExternalLinkIcon mx="2px" />}</Link> 
+        {/* <Link color={colorPrimary} fontSize="sm">Sugerencias{<ExternalLinkIcon />}</Link>  */}
       </Box>
   )
 }
