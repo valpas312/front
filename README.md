@@ -15,10 +15,13 @@ npm run dev
 npx cypress open
 ```
 
-#
+# Credenciales de acceso
+```bash
+Usuario: 45929690
+Contraseña: 41667229Vv.
+```
 
-
-## Aclaraciones
+# Aclaraciones
 
 - El backend de la aplicacion se encuentra en un repositorio privado, por lo que no se puede acceder a el.
 
@@ -26,4 +29,4 @@ npx cypress open
 
 - La aplicacion esta en una version de desarrollo, por lo que puede contener errores.
 
--Proximamente se subira el backend a un repositorio publico para que se pueda acceder a el.
+- Proximamente se subira el backend a un repositorio publico para que se pueda acceder a el.
