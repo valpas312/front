@@ -3,6 +3,8 @@ export const bgPrimary = "#326273"
 export const bgSecondary = "#EEEEEE"
 export const colorPrimary = "#ECEBE4"
 export const colorSecondary = "#272838"
+export const github = "https://github.com/valpas312"
+export const linkedin = "https://www.linkedin.com/in/valenpalmas/"
 
 //API Dolares
 export const DOLAR_API = "https://dolarapi.com/v1/dolares"

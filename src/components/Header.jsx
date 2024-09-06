@@ -2,9 +2,16 @@ import DrawerProfile from "../components/DrawerProfile";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../redux/configStore";
 import { useNavigate } from "react-router-dom";
-import { Box, Text, Avatar, useDisclosure, Divider } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  Avatar,
+  useDisclosure,
+  Divider,
+} from "@chakra-ui/react";
 import { bgPrimary, colorPrimary, yoJPG } from "../helpers/constantes";
 import { useRef } from "react";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -26,9 +33,7 @@ const Header = () => {
       alignItems="center"
       bg={bgPrimary}
     >
-      <Text color={colorPrimary}>
-        Home
-      </Text>
+      <Text color={colorPrimary}>Home</Text>
       <Box
         display="flex"
         justifyContent="space-around"
@@ -37,14 +42,10 @@ const Header = () => {
       >
         <Text color={colorPrimary}>{user.nombre}</Text>
         <Divider orientation="vertical" height="2em" />
-        <Avatar
-          cursor="pointer"
-          size="sm"
-          name={user.nombre}
-          onClick={onOpen}
-          ref={btnRef}
-          src={yoJPG}
-        />
+        <Box onClick={onOpen} cursor="pointer">
+          <Avatar size="sm" name={user.nombre} ref={btnRef} src={yoJPG} />
+          <ChevronDownIcon color={colorPrimary} />
+        </Box>
       </Box>
       <DrawerProfile
         isOpen={isOpen}
