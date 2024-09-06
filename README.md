@@ -1,8 +1,29 @@
-# React + Vite
+# Comandos para iniciar la aplicacion
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Instalar dependencias
+```bash
+npm install
+```
 
-Currently, two official plugins are available:
+## Iniciar la aplicacion en modo desarrollo
+```bash
+npm run dev
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Iniciar Cypress para realizar pruebas
+```bash
+npx cypress open
+```
+
+#
+
+
+## Aclaraciones
+
+- El backend de la aplicacion se encuentra en un repositorio privado, por lo que no se puede acceder a el.
+
+- El diseño de la aplicacion todavia no es responsive, por lo que se recomienda utilizar la aplicacion en una pantalla de escritorio.
+
+- La aplicacion esta en una version de desarrollo, por lo que puede contener errores.
+
+-Proximamente se subira el backend a un repositorio publico para que se pueda acceder a el.
